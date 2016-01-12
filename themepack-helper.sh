@@ -21,14 +21,14 @@
 # Place some icons in scalable folders and launche this script from the root folder of the themepack.
 
 # Resize Jolla stock icons
-if [ "$(ls $jolla)" ]; then
+if [ "$(ls ./jolla/scalable/icons)" ]; then
 mogrify -path ./jolla/z1.0/icons/ -format png -background none -resize 86x86 ./jolla/scalable/icons/*.svg
 mogrify -path ./jolla/z1.5/icons/ -format png -background none -resize 129x129 ./jolla/scalable/icons/*.svg
 mogrify -path ./jolla/z2.0/icons/ -format png -background none -resize 172x172 ./jolla/scalable/icons/*.svg
 fi
 
 # Resize native apps icons
-if [ "$(ls $native)" ]; then
+if [ "$(ls ./native/scalable/apps)" ]; then
 mogrify -path ./native/86x86/apps/ -format png -background none -resize 86x86 ./native/scalable/apps/*.svg
 mogrify -path ./native/108x108/apps/ -format png -background none -resize 108x108 ./native/scalable/apps/*.svg
 mogrify -path ./native/128x128/apps/ -format png -background none -resize 128x128 ./native/scalable/apps/*.svg
@@ -36,9 +36,19 @@ mogrify -path ./native/256x256/apps/ -format png -background none -resize 256x25
 fi
 
 # Resize Android icons
-if [ "$(ls $apk)" ]; then
+if [ "$(ls ./apk/scalable)" ]; then
 mogrify -path ./apk/86x86 -format png -background none -resize 86x86 ./apk/scalable/*.svg
 mogrify -path ./apk/128x128 -format png -background none -resize 128x128 ./apk/scalable/*.svg
+fi
+
+# Resize DynCal icons
+if [ "$(ls ./dyncal/scalable/)" ]; then
+mogrify -path ./dyncal/256x256 -format png -background none -resize 256x256 ./dyncal/scalable/*.svg
+fi
+
+# Resize DynClock icons
+if [ "$(ls ./dynclock/scalable/)" ]; then
+mogrify -path ./dynclock/256x256 -format png -background none -resize 256x256 ./dynclock/scalable/*.svg
 fi
 
 exit 0
