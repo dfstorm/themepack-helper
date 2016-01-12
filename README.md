@@ -8,7 +8,7 @@ I created this script to help automating icons resizing for my [theme pack suppo
 
 ## Usage
 1. Place your icons in `jolla/scalable/icons` if they are Jolla stock icons, `native/scalable/apps` if they are native apps icons and `apk/scalable` if they are Android icons.
-2. Rename your icons accordingly with the [wiki][https://github.com/fravaccaro/themepacksupport-sailfishos/wiki/Icons].
+2. Rename your icons accordingly with the [wiki](https://github.com/fravaccaro/themepacksupport-sailfishos/wiki/Icons).
 3. Launch the script.
 4. Go on [packaging your theme](https://github.com/fravaccaro/themepacksupport-sailfishos/wiki).
 
