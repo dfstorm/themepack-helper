@@ -1,7 +1,8 @@
 #!/bin/bash
 #
 #    Theme pack support for Sailfish OS - Enables theme pack support in Sailfish OS.
-#    Copyright (C) 2015  fravaccaro fravaccaro90@gmail.com
+#    Copyright (C) 2016  dfstorm dfstorm@riseup.net - Change from ImageMagik to Inkscape
+#    Copyright (C) 2015  fravaccaro fravaccaro90@gmail.com - Initial release
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -22,33 +23,59 @@
 
 # Resize Jolla stock icons
 if [ "$(ls ./jolla/scalable/icons)" ]; then
-mogrify -path ./jolla/z1.0/icons/ -format png -background none -resize 86x86 ./jolla/scalable/icons/*.svg
-mogrify -path ./jolla/z1.5/icons/ -format png -background none -resize 129x129 ./jolla/scalable/icons/*.svg
-mogrify -path ./jolla/z2.0/icons/ -format png -background none -resize 172x172 ./jolla/scalable/icons/*.svg
+
+    ls ./jolla/scalable/icons/*.svg | while read file
+        do
+            filename=$(basename "$file")
+            destFile=`echo $filename | sed 's/\.svg/\.png/'`
+            inkscape -f $file -w 86 -h 86 -e ./jolla/z1.0/icons/$destFile
+            inkscape -f $file -w 129 -h 129 -e ./jolla/z1.5/icons/$destFile
+            inkscape -f $file -w 172 -h 172 -e ./jolla/z2.0/icons/$destFile
+        done
 fi
 
 # Resize native apps icons
 if [ "$(ls ./native/scalable/apps)" ]; then
-mogrify -path ./native/86x86/apps/ -format png -background none -resize 86x86 ./native/scalable/apps/*.svg
-mogrify -path ./native/108x108/apps/ -format png -background none -resize 108x108 ./native/scalable/apps/*.svg
-mogrify -path ./native/128x128/apps/ -format png -background none -resize 128x128 ./native/scalable/apps/*.svg
-mogrify -path ./native/256x256/apps/ -format png -background none -resize 256x256 ./native/scalable/apps/*.svg
+    ls ./native/scalable/apps/*.svg | while read file
+        do
+            filename=$(basename "$file")
+            destFile=`echo $filename | sed 's/\.svg/\.png/'`
+            inkscape -f $file -w 86 -h 86 -e ./native/86x86/apps/$destFile
+            inkscape -f $file -w 108 -h 108 -e ./native/108x108/apps/$destFile
+            inkscape -f $file -w 128 -h 128 -e ./native/128x128/apps/$destFile
+            inkscape -f $file -w 256 -h 256 -e ./native/256x256/apps/$destFile
+        done
 fi
 
 # Resize Android icons
 if [ "$(ls ./apk/scalable)" ]; then
-mogrify -path ./apk/86x86 -format png -background none -resize 86x86 ./apk/scalable/*.svg
-mogrify -path ./apk/128x128 -format png -background none -resize 128x128 ./apk/scalable/*.svg
+    ls ./apk/scalable/apps/*.svg | while read file
+        do
+            filename=$(basename "$file")
+            destFile=`echo $filename | sed 's/\.svg/\.png/'`
+            inkscape -f $file -w 86 -h 86 -e ./apk/86x86/apps/$destFile
+            inkscape -f $file -w 128 -h 128 -e ./apk/128x128/apps/$destFile
+        done
 fi
 
 # Resize DynCal icons
 if [ "$(ls ./dyncal/scalable/)" ]; then
-mogrify -path ./dyncal/256x256 -format png -background none -resize 256x256 ./dyncal/scalable/*.svg
+    ls ./dyncal/scalable/apps/*.svg | while read file
+        do
+            filename=$(basename "$file")
+            destFile=`echo $filename | sed 's/\.svg/\.png/'`
+            inkscape -f $file -w 256 -h 256 -e ./dyncal/256x256/$destFile
+        done
 fi
 
 # Resize DynClock icons
 if [ "$(ls ./dynclock/scalable/)" ]; then
-mogrify -path ./dynclock/256x256 -format png -background none -resize 256x256 ./dynclock/scalable/*.svg
+    ls ./dynclock/scalable/apps/*.svg | while read file
+        do
+            filename=$(basename "$file")
+            destFile=`echo $filename | sed 's/\.svg/\.png/'`
+            inkscape -f $file -w 256 -h 256 -e ./dynclock/256x256/$destFile
+        done
 fi
 
 exit 0
