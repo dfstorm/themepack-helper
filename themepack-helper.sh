@@ -1,8 +1,8 @@
 #!/bin/bash
 #
 #    Theme pack support for Sailfish OS - Enables theme pack support in Sailfish OS.
+#    Copyright (C) 2016  fravaccaro fravaccaro90@gmail.com - Initial release
 #    Copyright (C) 2016  dfstorm dfstorm@riseup.net - Change from ImageMagik to Inkscape
-#    Copyright (C) 2015  fravaccaro fravaccaro90@gmail.com - Initial release
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
