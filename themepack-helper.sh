@@ -49,7 +49,7 @@ fi
 
 # Resize Android icons
 if [ "$(ls ./apk/scalable)" ]; then
-    ls ./apk/scalable/apps/*.svg | while read file
+    ls ./apk/scalable/*.svg | while read file
         do
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
@@ -60,7 +60,7 @@ fi
 
 # Resize DynCal icons
 if [ "$(ls ./dyncal/scalable/)" ]; then
-    ls ./dyncal/scalable/apps/*.svg | while read file
+    ls ./dyncal/scalable/*.svg | while read file
         do
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
@@ -70,7 +70,7 @@ fi
 
 # Resize DynClock icons
 if [ "$(ls ./dynclock/scalable/)" ]; then
-    ls ./dynclock/scalable/apps/*.svg | while read file
+    ls ./dynclock/scalable/*.svg | while read file
         do
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
