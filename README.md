@@ -4,7 +4,7 @@ I created this script to help automating icons resizing for my [theme pack suppo
 
 1. Icons in svg.
 2. A GNU/Linux distro.
-3. ImageMagick (install it via your package manager).
+3. Inkscape (install it via your package manager).
 
 ## Usage
 1. Place your icons in `jolla/scalable/icons` if they are Jolla stock icons, `native/scalable/apps` if they are native apps icons and `apk/scalable` if they are Android icons.
