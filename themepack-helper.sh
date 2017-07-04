@@ -64,6 +64,7 @@ if [ "$(ls ./dyncal/scalable/)" ]; then
         do
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
+            inkscape -f $file -w 86 -h 86 -e ./dyncal/86x86/$destFile
             inkscape -f $file -w 256 -h 256 -e ./dyncal/256x256/$destFile
         done
 fi
@@ -74,6 +75,7 @@ if [ "$(ls ./dynclock/scalable/)" ]; then
         do
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
+            inkscape -f $file -w 86 -h 86 -e ./dynclock/86x86/$destFile
             inkscape -f $file -w 256 -h 256 -e ./dynclock/256x256/$destFile
         done
 fi
