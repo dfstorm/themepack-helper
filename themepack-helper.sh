@@ -29,7 +29,10 @@ if [ "$(ls ./jolla/scalable/icons)" ]; then
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
             inkscape -f $file -w 86 -h 86 -e ./jolla/z1.0/icons/$destFile
+            inkscape -f $file -w 108 -h 108 -e ./jolla/z1.25/icons/$destFile
             inkscape -f $file -w 129 -h 129 -e ./jolla/z1.5/icons/$destFile
+            inkscape -f $file -w 129 -h 129 -e ./jolla/z1.5-large/icons/$destFile
+            inkscape -f $file -w 151 -h 151 -e ./jolla/z1.75/icons/$destFile
             inkscape -f $file -w 172 -h 172 -e ./jolla/z2.0/icons/$destFile
         done
 fi
