@@ -83,4 +83,14 @@ if [ "$(ls ./dynclock/scalable/)" ]; then
         done
 fi
 
+# Resize overlays
+if [ "$(ls ./overlay/)" ]; then
+    ls ./overlay/*.svg | while read file
+        do
+            filename=$(basename "$file")
+            destFile=`echo $filename | sed 's/\.svg/\.png/'`
+            inkscape -f $file -w 512 -h 512 -e ./overlay/$destFile
+        done
+fi
+
 exit 0
