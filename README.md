@@ -1,4 +1,4 @@
-I created this script to help automating icons resizing for my [theme pack support](https://fravaccaro.github.io/themepacksupport-sailfishos).
+I created this script to help automating icons resizing for my [theme pack support](https://uithemer.github.io/themepacksupport-sailfishos).
 
 ## What you need
 
@@ -8,9 +8,9 @@ I created this script to help automating icons resizing for my [theme pack suppo
 
 ## Usage
 1. Place your icons in `jolla/scalable/icons` if they are Jolla stock icons, `native/scalable/apps` if they are native apps icons and `apk/scalable` if they are Android icons.
-2. Rename your icons accordingly with the [wiki](https://fravaccaro.github.io/themepacksupport-sailfishos/docs/icons.html).
+2. Rename your icons accordingly with the [wiki](https://uithemer.github.io/themepacksupport-sailfishos/docs/icons.html).
 3. Launch the script.
-4. Go on [packaging your theme](https://fravaccaro.github.io/themepacksupport-sailfishos/docs/getstarted.html).
+4. Go on [packaging your theme](https://uithemer.github.io/themepacksupport-sailfishos/docs/getstarted.html).
 
 ### Pro tip
 

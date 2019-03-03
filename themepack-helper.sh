@@ -46,6 +46,7 @@ if [ "$(ls ./native/scalable/apps)" ]; then
             inkscape -f $file -w 86 -h 86 -e ./native/86x86/apps/$destFile
             inkscape -f $file -w 108 -h 108 -e ./native/108x108/apps/$destFile
             inkscape -f $file -w 128 -h 128 -e ./native/128x128/apps/$destFile
+            inkscape -f $file -w 172 -h 172 -e ./native/172x172/apps/$destFile
             inkscape -f $file -w 256 -h 256 -e ./native/256x256/apps/$destFile
         done
 fi
