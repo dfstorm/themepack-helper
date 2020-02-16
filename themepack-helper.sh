@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 #    Theme pack support for Sailfish OS - Enables theme pack support in Sailfish OS.
-#    Copyright (C) 2015-2016  fravaccaro fravaccaro90@gmail.com - Initial release
+#    Copyright (C) 2015-2020  fravaccaro fravaccaro90@gmail.com - Initial release
 #    Copyright (C) 2016  dfstorm dfstorm@riseup.net - Change from ImageMagik to Inkscape
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -28,12 +28,12 @@ if [ "$(ls ./jolla/scalable/icons)" ]; then
         do
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 86 -h 86 -e ./jolla/z1.0/icons/$destFile
-            inkscape -f $file -w 108 -h 108 -e ./jolla/z1.25/icons/$destFile
-            inkscape -f $file -w 129 -h 129 -e ./jolla/z1.5/icons/$destFile
-            inkscape -f $file -w 129 -h 129 -e ./jolla/z1.5-large/icons/$destFile
-            inkscape -f $file -w 151 -h 151 -e ./jolla/z1.75/icons/$destFile
-            inkscape -f $file -w 172 -h 172 -e ./jolla/z2.0/icons/$destFile
+            inkscape --without-gui --actions="export-filename:./jolla/z1.0/icons/$destFile; export-height:86; export-width:86;" $file
+            inkscape --without-gui --actions="export-filename:./jolla/z1.25/icons/$destFile; export-height:108; export-width:108;" $file
+            inkscape --without-gui --actions="export-filename:./jolla/z1.5/icons/$destFile; export-height:129; export-width:129;" $file
+            inkscape --without-gui --actions="export-filename:./jolla/z1.5-large/icons/$destFile; export-height:129; export-width:129;" $file
+            inkscape --without-gui --actions="export-filename:./jolla/z1.75/icons/$destFile; export-height:151; export-width:151;" $file
+            inkscape --without-gui --actions="export-filename:./jolla/z2.0/icons/$destFile; export-height:172; export-width:172;" $file
         done
 fi
 
@@ -43,11 +43,11 @@ if [ "$(ls ./native/scalable/apps)" ]; then
         do
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 86 -h 86 -e ./native/86x86/apps/$destFile
-            inkscape -f $file -w 108 -h 108 -e ./native/108x108/apps/$destFile
-            inkscape -f $file -w 128 -h 128 -e ./native/128x128/apps/$destFile
-            inkscape -f $file -w 172 -h 172 -e ./native/172x172/apps/$destFile
-            inkscape -f $file -w 256 -h 256 -e ./native/256x256/apps/$destFile
+            inkscape --without-gui --actions="export-filename:./native/86x86/apps/$destFile; export-height:86; export-width:86;" $file
+            inkscape --without-gui --actions="export-filename:./native/108x108/apps/$destFile; export-height:108; export-width:108;" $file
+            inkscape --without-gui --actions="export-filename:./native/128x128/apps/$destFile; export-height:128; export-width:128;" $file
+            inkscape --without-gui --actions="export-filename:./native/172x172/apps/$destFile; export-height:172; export-width:172;" $file
+            inkscape --without-gui --actions="export-filename:./native/256x256/apps/$destFile; export-height:256; export-width:256;" $file
         done
 fi
 
@@ -57,9 +57,9 @@ if [ "$(ls ./apk/scalable)" ]; then
         do
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 86 -h 86 -e ./apk/86x86/$destFile
-            inkscape -f $file -w 128 -h 128 -e ./apk/128x128/$destFile
-            inkscape -f $file -w 192 -h 192 -e ./apk/192x192/$destFile
+            inkscape --without-gui --actions="export-filename:./apk/86x86/$destFile; export-height:86; export-width:86;" $file
+            inkscape --without-gui --actions="export-filename:./apk/128x128/$destFile; export-height:128; export-width:128;" $file
+            inkscape --without-gui --actions="export-filename:./apk/192x192/$destFile; export-height:192; export-width:192;" $file
         done
 fi
 
@@ -69,8 +69,8 @@ if [ "$(ls ./dyncal/scalable/)" ]; then
         do
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 86 -h 86 -e ./dyncal/86x86/$destFile
-            inkscape -f $file -w 256 -h 256 -e ./dyncal/256x256/$destFile
+            inkscape --without-gui --actions="export-filename:./dyncal/86x86/$destFile; export-height:86; export-width:86;" $file
+            inkscape --without-gui --actions="export-filename:./dyncal/256x256/$destFile; export-height:256; export-width:256;" $file
         done
 fi
 
@@ -80,8 +80,8 @@ if [ "$(ls ./dynclock/scalable/)" ]; then
         do
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 86 -h 86 -e ./dynclock/86x86/$destFile
-            inkscape -f $file -w 256 -h 256 -e ./dynclock/256x256/$destFile
+            inkscape --without-gui --actions="export-filename:./dynclock/86x86/$destFile; export-height:86; export-width:86;" $file
+            inkscape --without-gui --actions="export-filename:./dynclock/256x256/$destFile; export-height:256; export-width:256;" $file
         done
 fi
 
@@ -91,7 +91,7 @@ if [ "$(ls ./overlay/)" ]; then
         do
             filename=$(basename "$file")
             destFile=`echo $filename | sed 's/\.svg/\.png/'`
-            inkscape -f $file -w 512 -h 512 -e ./overlay/$destFile
+            inkscape --without-gui --actions="export-filename:./overlay/$destFile; export-height:512; export-width:512;" $file
         done
 fi
 
